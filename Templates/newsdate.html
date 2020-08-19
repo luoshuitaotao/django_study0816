@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} News Archieve {% endblock %}
+
+{% block body %}
+
+<h1>Newses for Year {{ year }}</h1>
+
+{% for news in article_list %}
+<h2>{{ news.author }}</h2>
+<h2>{{ news.title }}</h2>
+<p>{{ news.description }}</p>
+<h4>{{ news.pub_date }}</h4>
+
+{% endfor %}
+{% endblock %}

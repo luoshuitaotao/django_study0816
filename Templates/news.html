@@ -5,7 +5,11 @@
 {% block body %}
 
 <h1>This is our latest News page content.</h1>
-<p>This is our content description</p>
+
+<h1>{{ data.author }}</h1>
+<h2>{{ data.title }}</h2>
+<h3>{{ data.description }}</h3>
+
 <!--{{ list }}
 
 {% for lang in list %}
