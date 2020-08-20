@@ -6,6 +6,15 @@
 
 <div class="container">
     <h1>Signup Form</h1>
+    <ul class = "messages">
+        {% for msg in messages %}
+        <li>
+            <div class ="alert alert-{{msg.level_tag}}" role="alert">
+                {{ msg.message }}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 
     <form action = "{% url 'addUser' %}" method = "post">
         {% csrf_token %}

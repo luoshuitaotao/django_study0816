@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from .models import News
 from .forms import RegestrationForm
 from .models import RegistrationData
+from django.contrib import messages
+
 
 def Home(request):
     context = {
@@ -51,5 +53,6 @@ def addUser(request):
                                      phone=form.cleaned_data['phone'],
                                      )
         myregister.save()
+        messages.add_message(request, messages.SUCCESS, "You have signup successfully ")
 
-    return redirect('home')
+    return redirect('register')
