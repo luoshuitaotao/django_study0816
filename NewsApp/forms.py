@@ -14,13 +14,13 @@ class RegestrationForm(forms.Form):
     }))
 
     email = forms.CharField(max_length=100,
-                               widget=forms.PasswordInput(attrs={
+                               widget=forms.EmailInput(attrs={
                                         'class':'form-control',
                                         'placeholder': 'Email',
     }))
 
     phone = forms.CharField(max_length=100,
-                            widget=forms.PasswordInput (attrs={
+                            widget=forms.NumberInput (attrs={
                                 'class': 'form-control',
                                 'placeholder': 'Phone',
                             }))
@@ -35,4 +35,26 @@ class RegistrationModel(forms.ModelForm):
             'email',
             'phone'
         ]
+        widgets = {
+            'username':forms.TextInput(attrs={
+                                        'class':'form-control',
+                                        'placeholder': 'Username',
 
+            }),
+            'password': forms.TextInput (attrs={
+                'class': 'form-control',
+                'placeholder': 'Password',
+
+            }),
+            'email': forms.TextInput (attrs={
+                'class': 'form-control',
+                'placeholder': 'Email',
+
+            }),
+            'phone': forms.TextInput (attrs={
+                'class': 'form-control',
+                'placeholder': 'Phone',
+
+            })
+
+        }
